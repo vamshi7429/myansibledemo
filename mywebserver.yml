@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: mywebservers
   become: yes
   gather_facts: yes 
   tasks:
@@ -20,12 +20,12 @@
      yum:
        name: httpd
        state: present
-     when: ansible_os_family == "RedHat"  
+     when: ansible_os_family =="RedHat"  
 
 
    - name: i want to start a webserver on RedHat
      service: 
        name: httpd 
        state: started
-     when: ansible_os_family == "RedHat"     
+     when: ansible_os_family =="RedHat"     
       
