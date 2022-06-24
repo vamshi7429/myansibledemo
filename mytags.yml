@@ -13,7 +13,7 @@
       name: tree 
       state: present
 
-  - nmae: install wget
+  - name: install wget
     apt:
       name: wget
       state: present       
