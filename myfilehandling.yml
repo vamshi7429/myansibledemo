@@ -11,12 +11,12 @@
 
 
   - name: i want to install webserver
-    apt:
-    - name: apache2
+    apt: 
+      name: apache2
       state: present
 
   - name: copy dynamic file into node side
     template:
-    src: myindexfile.j2
-    dest: /var/www/html/index.html
+      src: myindexfile.j2
+      dest: /var/www/html/index.html
 
