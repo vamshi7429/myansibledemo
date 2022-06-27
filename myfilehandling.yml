@@ -8,7 +8,7 @@
     copy: 
       src: mystatic 
       dest: /home/ubuntu/mystaticfile 
-
+    notify: restartwebserver 
 
   - name: i want to install webserver
     apt: 
@@ -19,4 +19,9 @@
     template:
       src: myindexfile.j2
       dest: /var/www/html/index.html
+  handlers:
+  - name: restartwebserver
+    systemd:
+      name: apache2
+      state: restarted      
 
